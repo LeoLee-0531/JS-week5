@@ -59,21 +59,31 @@ addTicketBtn.addEventListener("click", function () {
   ) {
     alert("請輸入完整資訊");
     return;
+  } else {
+    let obj = {
+      id: id,
+      name: ticketName,
+      imgUrl: image,
+      area: area,
+      description: description,
+      group: group,
+      price: price,
+      rate: rate,
+    };
+
+    data.push(obj);
+    updateData();
+    alert("新增成功");
+
+    // 清空輸入框
+    document.querySelector("#ticketName").value = "";
+    document.querySelector("#ticketImgUrl").value = "";
+    document.querySelector("#ticketRegion").value = "";
+    document.querySelector("#ticketDescription").value = "";
+    document.querySelector("#ticketNum").value = "";
+    document.querySelector("#ticketPrice").value = "";
+    document.querySelector("#ticketRate").value = "";
   }
-
-  let obj = {
-    id: id,
-    name: ticketName,
-    imgUrl: image,
-    area: area,
-    description: description,
-    group: group,
-    price: price,
-    rate: rate,
-  };
-
-  data.push(obj);
-  updateData();
 });
 
 // 更新渲染資料
