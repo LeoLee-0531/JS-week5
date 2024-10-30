@@ -38,8 +38,8 @@ let data = [
 
 // 新增資料
 const addTicketBtn = document.querySelector(".addTicket-btn");
-addTicketBtn.addEventListener("click", function () {
-  preventDefault(); // 阻止表單預設提交行為
+addTicketBtn.addEventListener("click", function (e) {
+  e.preventDefault(); // 阻止表單預設提交行為
 
   let id = data.length - 1;
   let ticketName = document.querySelector("#ticketName").value;
