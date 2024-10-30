@@ -39,6 +39,8 @@ let data = [
 // 新增資料
 const addTicketBtn = document.querySelector(".addTicket-btn");
 addTicketBtn.addEventListener("click", function () {
+  preventDefault(); // 阻止表單預設提交行為
+
   let id = data.length - 1;
   let ticketName = document.querySelector("#ticketName").value;
   let image = document.querySelector("#ticketImgUrl").value;
@@ -76,13 +78,13 @@ addTicketBtn.addEventListener("click", function () {
     alert("新增成功");
 
     // 清空輸入框
-    document.querySelector("#ticketName").value = "";
-    document.querySelector("#ticketImgUrl").value = "";
-    document.querySelector("#ticketRegion").value = "";
-    document.querySelector("#ticketDescription").value = "";
-    document.querySelector("#ticketNum").value = "";
-    document.querySelector("#ticketPrice").value = "";
-    document.querySelector("#ticketRate").value = "";
+    ticketName.value = "";
+    image.value = "";
+    area.value = "";
+    description.value = "";
+    group.value = "";
+    price.value = "";
+    rate.value = "";
   }
 });
 
